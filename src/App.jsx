@@ -1,25 +1,9 @@
-import {  HashRouter,Routes, Route  } from 'react-router-dom'
 import Home from './Pages/Home'
 import NotFound from './Pages/NotFound'
-import About from './Pages/About'
 
 function App() {
   return (
-    <div>
-      <HashRouter>
-     <Routes>
-      
-        <Route index element ={<Home/>}/>
-        <Route path="/about" element={<About />} />
-        
-        <Route path="*" element={<NotFound />} />
-        
-
-        </Routes>
-      </HashRouter>
-       
-      
-    </div>  
+    <Home />
   )
 }
 
