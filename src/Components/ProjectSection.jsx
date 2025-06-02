@@ -5,7 +5,7 @@ const projects=[
         id:1,
         title:"Coffee Shop-Website Landing Page",
         description:"A responsive landing page for a coffee shop, showcasing its menu, ambiance, and contact information.",
-        image:"/Projects/peakpx.jpg",
+        image:"./Projects/peakpx.jpg",
         tags:["HTML", "CSS", "JavaScript"],
         demoUrl:"#",
         githubUrl:"#"
@@ -15,7 +15,7 @@ const projects=[
         id:2,
         title:"Coffee Shop-Website Landing Page",
         description:"A responsive landing page for a coffee shop, showcasing its menu, ambiance, and contact information.",
-        image:"/Projects/peakpx.jpg",
+        image:"./Projects/peakpx.jpg",
         tags:["HTML", "CSS", "JavaScript"],
         demoUrl:"#",
         githubUrl:"#"
@@ -25,7 +25,7 @@ const projects=[
         id:3,
         title:"Coffee Shop-Website Landing Page",
         description:"A responsive landing page for a coffee shop, showcasing its menu, ambiance, and contact information.",
-        image:"/Projects/peakpx.jpg",
+        image:"./Projects/peakpx.jpg",
         tags:["HTML", "CSS", "JavaScript"],
         demoUrl:"#",
         githubUrl:"#"
