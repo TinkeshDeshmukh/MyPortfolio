@@ -1,5 +1,6 @@
 import { ChartBar, Code, Rocket } from 'lucide-react'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const AboutSection = () => {
   return (
@@ -14,8 +15,8 @@ const AboutSection = () => {
             <p className='text-muted-foreground'>I'm a passionate Computer Science student and frontend developer who thrives on turning ideas into visually appealing, interactive websites. With a strong grip on HTML, CSS, JavaScript, and the MERN stack, I enjoy crafting digital experiences that are both functional and user-centric.</p>
             <p className='text-muted-foreground'>Beyond coding, I love exploring data analytics and participating in hackathons to solve real-world problems creatively. Whether it's building a portfolio site or a smart IoT solution, I’m always eager to learn, collaborate, and innovate in the tech space.</p>
             <div className='flex flex-col justify-center items-center sm:flex-row gap-4'>
-              <a href="#contact" className='cosmic-button'>Get In Touch</a>
-              <a href="/public/RenderCV_EngineeringResumes_Theme__1_ (1).pdf"  download="Tinkesh_Resume.pdf" className='px-6 py-2  border-2 border-primary rounded-full hover:bg-primary/20  hover:scale-110 transition-all duration-300'> Download Resume</a>
+              <Link href="#contact" className='cosmic-button'>Get In Touch</Link>
+              <Link href="/public/RenderCV_EngineeringResumes_Theme__1_ (1).pdf"  download="Tinkesh_Resume.pdf" className='px-6 py-2  border-2 border-primary rounded-full hover:bg-primary/20  hover:scale-110 transition-all duration-300'> Download Resume</Link>
             </div>
           </div>
           <div className='grid grid-cols-1 gap-6'>
