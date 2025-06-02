@@ -1,11 +1,11 @@
-import { HashRouter , Routes, Route } from 'react-router-dom'
+import { BrowserRouter , Routes, Route } from 'react-router-dom'
 import Home from './Pages/Home'
 import NotFound from './Pages/NotFound'
 
 function App() {
   return (
     <div>
-      <HashRouter >
+      <BrowserRouter >
       <Routes>
       
         <Route index element ={<Home/>}/>
@@ -14,7 +14,7 @@ function App() {
         {/* Add more routes here as needed */}
 
       </Routes>
-      </HashRouter >
+      </BrowserRouter >
     </div>  
   )
 }
