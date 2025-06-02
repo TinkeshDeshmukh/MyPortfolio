@@ -1,22 +1,39 @@
 import { Instagram, Linkedin, Mail, MapPin, Phone, Send } from 'lucide-react'
 import React, { useState } from 'react'
 import { cn } from '../lib/utils'
-import { useToast } from '../hooks/use-toast'
 
 const ContactSection = () => {
-    const {toast}=useToast();
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setIsSubmitting(true);
+   const [result, setResult] = useState("");
+   const [success, setSuccess] = useState(false);
+   
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "af05c260-086a-4162-8094-ca069cd1b082");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      setSuccess(true);
         setTimeout(() => {
-            toast({
-                title: "Message Sent",
-                description: "Thank you for reaching out! I'll get back to you soon.",
-            })
-        },1500);
-        setIsSubmitting(false);
+            setResult("");
+            setSuccess(false);
+        }, 5000);
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
     }
+  };
 
   return (
     <section id='contact' className='py-24 px-4 relative bg-secondary/30'>
@@ -92,7 +109,7 @@ const ContactSection = () => {
                 </div>
                 <div className='bg-card p-8 rounded-lg shadow-xs'>
                     <h3 className='text-2xl font-semibold mb-6'>Send a Message</h3>
-                    <form className='space-y-6' action="">
+                    <form className='space-y-6' action="" onSubmit={onSubmit}>
                         <div>
                             <label className='block text-sm  font-medium mb-2' htmlFor="name">Your Name</label>
                             <input type="text" name='name' id='name' required className='w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary' 
@@ -109,13 +126,15 @@ const ContactSection = () => {
                             placeholder="Hello I'd like to talk about.." />
                         </div>
                         <button
-                        onClick={handleSubmit}
                          type="submit" 
-                         disabled={isSubmitting}
                         className={cn("cosmic-button w-full flex items-center justify-center gap-2",)}>
-                            {isSubmitting? "Sending..":"Send Message"}
+                            Send Message
                             <Send/>
                         </button>
+
+                        <p className={success?"text-green-500 text-center":"hidden"}>
+                            {success?"Thank you for your message! I'll get back to you soon.":" "}
+                        </p>
 
                     </form>
 
