@@ -39,7 +39,11 @@ const categories=["All", "Frontend", "Backend", "Programming Languages", "Data A
 
 const SkillSection = () => {
     const [activeCategory, setActiveCategory] = useState("All");
-const filteredSkills=Skills.filter((skill)=>activeCategory==="All" ||skill.category===activeCategory);
+const filteredSkills = (activeCategory === "All"
+    ? Array.from(new Map(Skills.map(s => [s.name, s])).values()) // removes duplicates by name
+    : Skills.filter(skill => skill.category === activeCategory)
+);
+
 
 // Add a state to trigger animation on category/filter change
 const [animateKey, setAnimateKey] = useState(0);
