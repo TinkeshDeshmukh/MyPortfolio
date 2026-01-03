@@ -14,7 +14,6 @@ const About = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
 
-      /* Vertical ABOUT (desktop only) */
       gsap.from(verticalRef.current, {
         opacity: 0,
         x: -40,
@@ -26,7 +25,6 @@ const About = () => {
         },
       });
 
-      /* Headline */
       gsap.from(headingRef.current, {
         y: 40,
         opacity: 0,
@@ -38,7 +36,6 @@ const About = () => {
         },
       });
 
-      /* Animated underline */
       gsap.to(lineRef.current, {
         height:410,
         duration: 0.8,
@@ -49,7 +46,6 @@ const About = () => {
         },
       });
 
-      /* Paragraphs (staggered) */
       gsap.from(paraRefs.current, {
         y: 30,
         opacity: 0,
@@ -67,7 +63,7 @@ const About = () => {
         start: "top top",
         end: "+=100%",
         pin: true,
-        pinSpacing: false, // allows About to overlap
+        pinSpacing: false, 
       });
     
     }, sectionRef);
@@ -104,15 +100,12 @@ const About = () => {
           ABOUT
         </h2>
 
-        {/* MAIN CONTENT */}
         <div className="relative  max-w-2xl ml-0 lg:ml-auto">
 
-          {/* MOBILE LABEL */}
           <p className="lg:hidden text-sm tracking-[0.3em] text-white/40 mb-6">
             ABOUT
           </p>
 
-          {/* HEADLINE */}
           <h2 className="text-xl
               sm:text-xl
               lg:text-2xl
@@ -136,13 +129,11 @@ const About = () => {
             with purpose.
           </p>
 
-          {/* UNDERLINE */}
           <div
             ref={lineRef}
             className=" absolute -left-71 -top-5 mt-6 w-0.5  bg-white/35"
           />
 
-          {/* BODY */}
           <p
             ref={(el) => (paraRefs.current[0] = el)}
             className="

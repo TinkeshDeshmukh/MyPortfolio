@@ -14,7 +14,6 @@ export default function Hero() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // ─── INTRO ANIMATION ───
       const tl = gsap.timeline();
 
       tl.fromTo(
@@ -39,13 +38,12 @@ export default function Hero() {
           { opacity: 1, duration: 0.8 }
         );
 
-      // ─── PIN HERO ───
       ScrollTrigger.create({
         trigger: sectionRef.current,
         start: "top top",
         end: "+=100%",
         pin: true,
-        pinSpacing: false, // allows About to overlap
+        pinSpacing: false, 
       });
     }, sectionRef);
 
@@ -58,7 +56,6 @@ export default function Hero() {
       id="home"
       className="relative h-screen grid grid-cols-1 lg:grid-cols-2 overflow-hidden bg-[#1b1a1a] text-white z-0"
     >
-      {/* LEFT CONTENT */}
       <div className="px-10 pt-24 flex flex-col justify-center">
         <h1
           ref={titleRef}
@@ -79,7 +76,6 @@ export default function Hero() {
         </p>
       </div>
 
-      {/* RIGHT IMAGE */}
       <div className="relative hidden lg:flex items-center justify-center">
         <img
           ref={imageRef}

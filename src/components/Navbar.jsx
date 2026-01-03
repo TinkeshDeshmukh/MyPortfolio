@@ -12,7 +12,6 @@ const Navbar = () => {
   const line3 = useRef(null);
   const [open, setOpen] = useState(false);
 
-  /* MOBILE NAV FADE-IN */
   useEffect(() => {
     gsap.fromTo(
       mobileNavRef.current,
@@ -21,7 +20,6 @@ const Navbar = () => {
     );
   }, []);
 
-  /* MOBILE MENU ANIMATION */
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";

@@ -37,7 +37,6 @@ const Projects = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Section entry
       gsap.from(sectionRef.current, {
         y: 120,
         opacity: 0,
@@ -49,7 +48,6 @@ const Projects = () => {
         },
       });
 
-      // Rows reveal
       gsap.from(rowRefs.current, {
         y: 40,
         opacity: 0,
@@ -62,7 +60,6 @@ const Projects = () => {
         },
       });
 
-      // Divider lines animation
       lineRefs.current.forEach((line) => {
         gsap.fromTo(
           line,
@@ -120,7 +117,6 @@ const Projects = () => {
     >
       <div className="max-w-6xl mx-auto px-6 sm:px-10 py-32">
 
-        {/* HEADER */}
         <div className="mb-28">
           <p className="text-sm tracking-[0.4em] text-white/40 mb-4">
             PROJECTS
@@ -130,7 +126,6 @@ const Projects = () => {
           </h2>
         </div>
 
-        {/* PROJECT LIST */}
         <div className="flex flex-col gap-24 relative">
           {projects.map((p, i) => (
             <div
@@ -139,7 +134,6 @@ const Projects = () => {
               onMouseEnter={() => onEnter(i)}
               onMouseLeave={() => onLeave(i)}
             >
-              {/* GHOST TITLE (DESKTOP ONLY) */}
               <h3
                 ref={(el) => (ghostRefs.current[i] = el)}
                 className="
@@ -161,13 +155,11 @@ const Projects = () => {
                 {p.title}
               </h3>
 
-              {/* ROW */}
               <div
                 ref={(el) => (rowRefs.current[i] = el)}
                 className="relative z-10"
               >
                 <div className="flex flex-col sm:flex-row sm:justify-between gap-8 pb-10">
-                  {/* LEFT */}
                   <div>
                     <p
                       className={`text-sm mb-2 ${
@@ -196,7 +188,6 @@ const Projects = () => {
                     </p>
                   </div>
 
-                  {/* CTA */}
                   <div className="self-start pt-6 sm:pt-10">
                     <a
                     target="_blank"
@@ -228,7 +219,6 @@ const Projects = () => {
                   </div>
                 </div>
 
-                {/* DIVIDER */}
                 <span
                   ref={(el) => (lineRefs.current[i] = el)}
                   className="block h-[1px] w-full bg-white/20 origin-left"

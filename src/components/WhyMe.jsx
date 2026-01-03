@@ -73,7 +73,6 @@ const WhyMe = () => {
     >
       <div className="max-w-6xl mx-auto px-6 sm:px-10 w-full">
 
-        {/* SECTION LABEL */}
         <div
           ref={labelRef}
           className="mb-12 text-xs tracking-[0.4em] text-white/40"
@@ -83,7 +82,6 @@ const WhyMe = () => {
 
         <div className="grid lg:grid-cols-2 gap-16 items-start">
 
-          {/* LEFT — STATEMENT */}
           <h2
             ref={headingRef}
             className="
@@ -99,7 +97,6 @@ const WhyMe = () => {
             is intentional.
           </h2>
 
-          {/* RIGHT — CONTENT */}
           <div className="space-y-10">
 
             <div
@@ -119,7 +116,6 @@ const WhyMe = () => {
               </p>
             </div>
 
-            {/* CONNECT */}
             <div
               ref={iconsRef}
               className="flex items-center gap-6 pt-2"
